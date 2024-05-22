@@ -1,0 +1,125 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFC0CB;
+}
+
+header {
+    background-color: rgba(255, 105, 180, 0.5);
+    padding: 20px 0;
+    text-align: center;
+    color: #000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.5);
+}
+
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 0 10px;
+}
+
+.photo-with-caption {
+    flex-basis: calc(50% - 20px); /* Dividindo o espaço horizontal em duas colunas */
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.photo {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.caption {
+    margin-top: 10px;
+    text-align: center;
+    font-size: .9em;
+}
+
+.text-baixo {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8em;
+    color: #000;
+    padding: 0 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #fff;
+    background-color: rgba(255, 105, 180, 0.5);
+}
+
+footer button {
+    background-color: #ff85a2;
+    border: none;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition-duration: .4s;
+    margin: 5px;
+}
+
+footer button:hover {
+    background-color: #ff6b8b;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 1024px) {
+    .photo-with-caption {
+        flex-basis: calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .photo-with-caption {
+        flex-basis: calc(50% - 20px);
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .text-baixo {
+        font-size: 1.5em;
+    }
+
+    footer button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-with-caption {
+        flex-basis: calc(100% - 20px);
+    }
+
+    .text-baixo {
+        font-size: 1.2em;
+    }
+
+    footer button {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+}

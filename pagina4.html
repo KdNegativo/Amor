@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poema de Amor</title>
+    <link rel="stylesheet" href="pagina4.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .mute-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .mute-button i {
+            color: #fff;
+            font-size: 24px;
+        }
+
+        .mute-button:hover {
+            transform: scale(1.2);
+        }
+
+        .button {
+            background-color: #333;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: background-color 0.3s; /* Transição suave */
+        }
+
+        .button:hover {
+            background-color: #001f3f; /* Azul escuro ao passar o mouse */
+        }
+
+        .next-button {
+            display: none; /* Inicialmente oculto */
+        }
+
+        #poemSection .next-button {
+            display: inline-block; /* Mostra o botão próximo quando o poema é exibido */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <main>
+            <section class="poem" id="poemSection" style="display: none;">
+                <header id="header">
+                    <h1>Em Cada Pincelada, Meu Amor</h1>
+                </header>
+                <p>Em cada pincelada, teu rosto vejo,</p>
+                <p>Nas estrelas da noite, teu brilho, teu desejo.</p>
+                <p>Como Van Gogh pinta o céu com paixão,</p>
+                <p>Assim pinto teu amor em meu coração.</p>
+                <p>Teu sorriso ilumina meus dias,</p>
+                <p>Teus olhos, estrelas, minhas noites vazias.</p>
+                <p>Na beleza das flores, tu és o girassol,</p>
+                <p>Em cada quadro, meu eterno farol.</p>
+                <p>Tu és minha inspiração, minha arte, meu ser,</p>
+                <p>Nos quadros do amor, contigo quero viver.</p>
+                <p>Em cada pôr do sol, em cada aurora,</p>
+                <p>Te amo, minha estrela, minha musa, minha amora, meu tudo</p>
+            </section>
+        </main>
+        <footer>
+            <button class="button" onclick="location.href='pagina3.html'">Voltar</button>
+            <button class="button" onclick="togglePlay()">Começar</button>
+            <button id="nextButton" class="button next-button" onclick="toggleNext()">Próximo</button>
+        </footer>
+    </div>
+    <audio id="myAudio" loop>
+        <source src="golden hour (piano instrumental) (320).mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+    <button class="mute-button" onclick="toggleMute()">
+        <i class="fas fa-volume-up"></i>
+    </button>
+    <script>
+        function togglePlay() {
+            var audio = document.getElementById("myAudio");
+            audio.play();
+            audio.volume = 0.5; // Reduz o volume em 50%
+            document.getElementById("poemSection").style.display = "block";
+            document.getElementById("header").style.display = "block"; // Mostra o cabeçalho
+            document.querySelectorAll("button")[1].style.display = "none"; // Esconde o botão de play
+            document.getElementById("nextButton").style.display = "inline-block"; // Mostra o botão próximo
+        }
+
+        function toggleMute() {
+            var audio = document.getElementById("myAudio");
+            audio.muted = !audio.muted;
+            var muteButton = document.querySelector(".mute-button");
+            if (audio.muted) {
+                muteButton.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            } else {
+                muteButton.innerHTML = '<i class="fas fa-volume-up"></i>';
+            }
+        }
+
+        function toggleNext() {
+            location.href = 'pagina5.html';
+        }
+    </script>
+</body>
+</html>

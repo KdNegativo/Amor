@@ -1,0 +1,195 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFC0CB;
+    background-image: url(coração.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 0;
+}
+
+header {
+    background-color: rgba(255, 105, 180, 0.5);
+    padding: 20px 0;
+    text-align: center;
+    color: #000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.5);
+}
+
+.main {
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.button-container button {
+    background-color: #4CAF50;
+    border: none;
+    color: #fff;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: .4s;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.button-container button:hover {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #4CAF50;
+}
+
+.photo-with-caption {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.photo {
+    flex: 0 0 auto;
+    margin-right: 10px;
+}
+
+.photo img {
+    width: 100%;
+    max-width: 200px; /* Reduz a largura máxima das fotos */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0;
+    object-fit: cover;
+}
+
+.caption {
+    flex: 1;
+    color: #000;
+    font-family: 'Georgia', serif;
+    text-align: left;
+    transform: translateY(20px);
+    padding: 0 10px;
+}
+
+.caption img {
+    width: 100px;
+    height: auto;
+    margin-left: 10px;
+}
+
+.caption p {
+    margin: 0;
+}
+
+.final-section {
+    text-align: center;
+    margin: 20px;
+}
+
+.music-description {
+    margin-top: 10px;
+    color: #000;
+    font-family: 'Georgia', serif;
+}
+
+.photo-with-caption:last-child {
+    border-bottom: 3px solid #FF69B4;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    color: #fff;
+}
+
+footer button {
+    background-color: #ff85a2; /* Cor de fundo rosa claro para o botão */
+    border: none;
+    color: white; /* Texto branco */
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 30px; /* Borda arredondada */
+    cursor: pointer;
+    transition-duration: 0.4s; /* Efeito de transição suave */
+}
+
+footer button:hover {
+    background-color: #ff6b8b; /* Cor de fundo rosa mais escura ao passar o mouse */
+}
+
+.animated-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url('coração.jpg') repeat;
+    animation: moveBackground 10s linear infinite;
+}
+
+@keyframes moveBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .button-container {
+        justify-content: center;
+    }
+
+    .button-container button {
+        width: 100%;
+        max-width: 200px;
+        margin: 10px 0;
+    }
+
+    .photo-with-caption {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photo {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .caption {
+        text-align: center;
+        padding: 0 20px;
+        transform: translateY(0);
+    }
+
+    .caption img {
+        display: block;
+        margin: 10px auto;
+    }
+
+    /* Ajuste de tamanho para os GIFs na versão mobile */
+    .first-gif, .second-gif {
+        width: 100%; /* Define a largura das imagens GIF como 100% na versão mobile */
+        height: auto; /* Mantém a proporção das imagens */
+        max-width: 400px; /* Define a largura máxima das imagens */
+    }
+}
